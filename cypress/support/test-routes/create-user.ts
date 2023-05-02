@@ -1,10 +1,6 @@
-import type { ActionArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 
-import { createUser } from "~/models/user.server";
-import { createUserSession } from "~/session.server";
-
-export const action = async ({ request }: ActionArgs) => {
+export const action = async ({ request }: any) => {
   if (process.env.NODE_ENV === "production") {
     console.error(
       "🚨 🚨 🚨 🚨 🚨 🚨 🚨 🚨 test routes should not be enabled in production 🚨 🚨 🚨 🚨 🚨 🚨 🚨 🚨"
@@ -23,14 +19,11 @@ export const action = async ({ request }: ActionArgs) => {
     throw new Error("All test emails must end in @example.com");
   }
 
-  const user = await createUser(email, "myreallystrongpassword");
-
-  return createUserSession({
+  return {
     redirectTo: "/",
     remember: true,
     request,
-    userId: user.id,
-  });
+  };
 };
 
 export default null;
