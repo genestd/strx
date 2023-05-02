@@ -4,6 +4,7 @@ strx-7131
 @aws
 region us-west-2
 runtime node
+profile strx
 
 @http
 /*
