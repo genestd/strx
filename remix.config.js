@@ -1,4 +1,4 @@
-const path = require("path");
+// const path = require("path");
 
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
 
       console.log("⚠️  Test routes enabled.");
 
-      const appDir = path.join(__dirname, "app");
+      // const appDir = path.join(__dirname, "app");
     });
   },
 };
