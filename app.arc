@@ -15,7 +15,9 @@ profile strx
 
 @tables
 users
-  pk *String
+  userId *String
+  name String
+  pfpUrl String
 
 streaks
   pk *String  # streakId
